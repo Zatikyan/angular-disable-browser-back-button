@@ -54,8 +54,8 @@ export class AppModule {}
 
 Run your application by typing the **ng serve** or **ng build** commands in your command line or terminal, and see the results: The browser back button will be disabled for whole the application.
 
-> ### Note: Module doesn't work per-module and does not tested with *Angular Universal*.
+> ### Note: Module doesn't work per-module and isn't tested with *Angular Universal*.
 
 ## License
 
-MIT
+### [MIT](https://github.com/Zatikyan/angular-disable-browser-back-button/blob/c3a519c04915124b6aed2b5a143f9fa58a51f228/LICENSE)
