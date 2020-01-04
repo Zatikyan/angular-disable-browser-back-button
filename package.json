@@ -1,0 +1,33 @@
+{
+  "name": "angular-disable-browser-back-button",
+  "version": "1.0.0",
+  "description": "Angular Module to disable Browser back button",
+  "scripts": {
+    "packagr": "./node_modules/.bin/ng-packagr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zatikyan/angular-disable-browser-back-button.git"
+  },
+  "author": "Armen Zatikyan (armen.zatikyan.1993@gmail.com)",
+  "keywords": [
+    "angular",
+    "browser",
+    "disable",
+    "back button"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zatikyan/angular-disable-browser-back-button/issues"
+  },
+  "homepage": "https://github.com/Zatikyan/angular-disable-browser-back-button#readme",
+  "devDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/compiler-cli": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/router": "^8.2.14",
+    "ng-packagr": "^5.7.1",
+    "typescript": "3.4.5"
+  }
+}
