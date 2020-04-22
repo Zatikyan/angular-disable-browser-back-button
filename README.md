@@ -17,7 +17,7 @@ Import the **BackButtonDisableModule** to your project app.module.ts file and ad
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { BackButtonDisableModule } from 'angular-desable-browser-back-button';
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 
 @NgModule({
   ...
@@ -35,7 +35,7 @@ The issue of the prevented backspace navigation is that it will move user to the
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { BackButtonDisableModule } from 'angular-desable-browser-back-button';
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 
 @NgModule({
   ...
