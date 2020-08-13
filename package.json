@@ -1,6 +1,6 @@
 {
   "name": "angular-disable-browser-back-button",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular Module to disable Browser back button",
   "scripts": {
     "packagr": "./node_modules/.bin/ng-packagr"
