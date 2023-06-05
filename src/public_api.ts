@@ -1,9 +1,8 @@
-import { NgModule, Injectable, ModuleWithProviders, Inject } from '@angular/core';
+import { NgModule, Injectable, ModuleWithProviders, InjectionToken, inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-function _window(): any {
-  return window;
-}
+const _window = (): Window => window;
+const SCROLL_TOKEN = new InjectionToken('preserveScroll')
 
 @Injectable()
 export class WindowRef {
@@ -17,6 +16,7 @@ export class WindowRef {
 })
 export class BackButtonDisableModule {
 
+  private preserveScroll = inject(SCROLL_TOKEN) || false;
   private window: Window;
   private scrollX = 0;
   private scrollY = 0;
@@ -24,20 +24,19 @@ export class BackButtonDisableModule {
   constructor(
     private router: Router,
     private windowRef: WindowRef,
-    @Inject('preserveScrollPosition') private preserveScrollPosition: boolean
   ) {
     this.window = this.windowRef.nativeWindow
     this.disableBackButton();
     this.addPopStateEventListener();
   }
 
-  static forRoot(config?: { preserveScrollPosition: boolean }): ModuleWithProviders {
+  static forRoot(config?: { preserveScroll: boolean }): ModuleWithProviders<BackButtonDisableModule> {
     return {
       ngModule: BackButtonDisableModule,
       providers: [
         {
-          provide: 'preserveScrollPosition',
-          useValue: config && 'preserveScrollPosition' in config ? config.preserveScrollPosition : false
+          provide: SCROLL_TOKEN,
+          useValue: config?.preserveScroll || false,
         }
       ]
     }
@@ -45,9 +44,9 @@ export class BackButtonDisableModule {
 
   private addPopStateEventListener(): void {
     this.window.addEventListener('popstate', () => {
-      if (this.preserveScrollPosition) this.getScrollCoordinates();
+      if (this.preserveScroll) this.getScrollCoordinates();
       this.window.history.pushState(null, null, null);
-      if (this.preserveScrollPosition) setTimeout(this.scrollToThePreviousPosition.bind(this));
+      if (this.preserveScroll) setTimeout(this.scrollToThePreviousPosition.bind(this));
     });
   }
 

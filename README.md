@@ -1,6 +1,6 @@
 # angular-disable-browser-back-button
 
-This Angular module generated using **@angular/cli** version 8.2.14.
+This Angular module generated using **@angular/cli** version 16.0.0.
 Module developed to help Angular developers to disable the browser back button.
 
 ## Install
@@ -42,7 +42,7 @@ import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
   imports: [
     ...
     BackButtonDisableModule.forRoot({
-      preserveScrollPosition: true
+      preserveScroll: true
     })
   ],
   ...
